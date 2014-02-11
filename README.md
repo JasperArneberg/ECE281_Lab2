@@ -71,6 +71,7 @@ I demonstrated basic functionality of four-bit adder to Dr. Neebel at 1424 on 10
 I have not demonstrated subtractor and overflow functionality yet.
 
 ## Documentation
+C3C El-Saawy helped me with determining the initial setup of the four-bit adder/subtractor.  
 I learned how to use for loops in a testbench and report results:
 http://www.seas.upenn.edu/~ese171/vhdl/VHDLTestbench.pdf  
 I used this site to understand why the overflow is Cout(2) xor Cout(3):
