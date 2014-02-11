@@ -80,22 +80,45 @@ BEGIN
 		Sub <= '0';
 		
 		--Loop for A values
-		for I in 0 to 15 loop
+		for J in 0 to 15 loop
 			--Loop for B values
-			for J in 0 to 15 loop
-				wait for 3ns;		
-						
-				--Code modeled from upenn.edu, see documentation
+			for K in 0 to 15 loop
+				wait for 1ns;		
+					
+			--Code modeled from upenn.edu, see documentation
 				assert (Sum = A + B) report "Expected sum of " &
 					integer'image(to_integer(unsigned((A+B)))) & " when A = " &
 					integer'image(to_integer(unsigned((A)))) & " and when B = " &
 					integer'image(to_integer(unsigned((B)))) & "; sum was calculated as " &
 					integer'image(to_integer(unsigned((Sum)))) severity ERROR;
-				
+			
 				--increment B
 				B <= B + "0001";
 			end loop;
+		
+			--increment A
+			A <= A + "0001";
+		end loop;
+
+		Sub <= '1';
+		
+		--Loop for A values
+		for J in 0 to 15 loop
+			--Loop for B values
+			for K in 0 to 15 loop
+				wait for 1ns;		
+					
+			--Code modeled from upenn.edu, see documentation
+				assert (Sum = A - B) report "Expected difference of " &
+					integer'image(to_integer(unsigned((A-B)))) & " when A = " &
+					integer'image(to_integer(unsigned((A)))) & " and when B = " &
+					integer'image(to_integer(unsigned((B)))) & "; difference was calculated as " &
+					integer'image(to_integer(unsigned((Sum)))) severity ERROR;
 			
+				--increment B
+				B <= B + "0001";
+			end loop;
+		
 			--increment A
 			A <= A + "0001";
 		end loop;

@@ -9,6 +9,8 @@
 -- Target Devices: 
 -- Tool versions: 
 -- Description: 
+-- Documentation: The following tutorial helpd me understand how to calculate overflow:
+-- http://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Comb/overflow.html
 --
 -- Dependencies: 
 --
@@ -49,12 +51,13 @@ architecture Structural of Four_Bit_Adder is
 	end component Full_Adder;
 
 	signal carry : STD_LOGIC_VECTOR(3 downto 0);
+	signal B_add_or_sub : STD_LOGIC_VECTOR(3 downto 0);
 
 begin
 
 Bit0: component Full_Adder
 	port map (A => A(0),
-				 B => B(0),
+				 B => B_add_or_sub(0),
 				 Cin => Sub,
 				 Sum => Sum(0),
 				 Cout => carry(0)
@@ -62,7 +65,7 @@ Bit0: component Full_Adder
 	
 Bit1: component Full_Adder
 	port map (A => A(1),
-				 B => B(1),
+				 B => B_add_or_sub(1),
 				 Cin => carry(0),
 				 Sum => Sum(1),
 				 Cout => carry(1)
@@ -70,7 +73,7 @@ Bit1: component Full_Adder
 
 Bit2: component Full_Adder
 	port map (A => A(2),
-				 B => B(2),
+				 B => B_add_or_sub(2),
 				 Cin => carry(1),
 				 Sum => Sum(2),
 				 Cout => carry(2)
@@ -78,11 +81,20 @@ Bit2: component Full_Adder
 
 Bit3: component Full_Adder
 	port map (A => A(3),
-				 B => B(3),
+				 B => B_add_or_sub(3),
 				 Cin => carry(2),
 				 Sum => Sum(3),
 				 Cout => carry(3)
 	);
-
+	
+	--overflow flag
+	V <= carry(3) xor carry(2);
+	
+	--handle subtraction (multiplexer behavioral code)
+	B_add_or_sub(0) <= (B(0) and (not Sub)) or ((not B(0)) and Sub);
+	B_add_or_sub(1) <= (B(1) and (not Sub)) or ((not B(1)) and Sub);
+	B_add_or_sub(2) <= (B(2) and (not Sub)) or ((not B(2)) and Sub);
+	B_add_or_sub(3) <= (B(3) and (not Sub)) or ((not B(3)) and Sub);
+	
 end Structural;
 
