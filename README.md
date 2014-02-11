@@ -62,9 +62,16 @@ The four-bit adder/subtractor waveform can be seen below. There are 512 potentia
 ![alt text](https://github.com/JasperArneberg/ECE281_Lab2/blob/master/four_bit_waveform.png?raw=true "Final Circuit Schematic")
 
 ### Design Process
+Throughout this lab, it was necessary to constantly break each problem down into smaller pieces. The first task was to make the full adder work. After that, the four-bit adder had to function correctly before moving on. The overflow was pretty easy to implement with a single line of code. The subtractor, on the other hand, took quite a bit of work, because it required multiplexer behavior.
+
+Creating the testbench proved to be a challenge. This was the first exercise or lab that required for loops to test. Since the syntax of VHDL can be very foreign, I had to research how to do for loops. I also looked up how to print error messages stating why certain numbers were not adding up correctly.
 
 ### Demonstrations
+I demonstrated basic functionality of four-bit adder to Dr. Neebel at 1424 on 10 Feb 14.  
+I have not demonstrated subtractor and overflow functionality yet.
 
-
-### Documentation
-None.
+## Documentation
+I learned how to use for loops in a testbench and report results:
+http://www.seas.upenn.edu/~ese171/vhdl/VHDLTestbench.pdf  
+I used this site to understand why the overflow is Cout(2) xor Cout(3):
+http://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Comb/overflow.html
