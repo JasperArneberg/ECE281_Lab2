@@ -73,7 +73,7 @@ Creating the testbench proved to be a challenge. This was the first exercise or 
 
 ### Demonstrations
 I demonstrated basic functionality of four-bit adder to Dr. Neebel at 1424 on 10 Feb 14.  
-I have not demonstrated subtractor and overflow functionality yet.
+I demonstrated complete funtionality including subtraction and overflow detection to Dr. Neebel at 1322 on 12 Feb 14.
 
 ## Documentation
 C3C El-Saawy helped me with determining the initial setup of the four-bit adder/subtractor. He also told me to change the reporting severity to FAILURE in the testbench to stop the test if there's an assertion error. 
