@@ -59,8 +59,10 @@ Here is the final circuit schematic. The design uses four full adder components,
 ### Four-Bit Adder Testbench Output
 The four-bit adder/subtractor waveform can be seen below. There are 512 potential combinations, each one corresponding to 1ns. Below the waveform is the console output. Notice that it states "Test completed successfully."
 
+###### Waveform Output
 ![alt text](https://github.com/JasperArneberg/ECE281_Lab2/blob/master/four_bit_waveform.png?raw=true "Waveform Output")
 
+###### Console Output
 ![alt text](https://github.com/JasperArneberg/ECE281_Lab2/blob/master/console_output.png?raw=true "Console Output")
 
 
