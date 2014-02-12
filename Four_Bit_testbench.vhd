@@ -90,7 +90,7 @@ BEGIN
 					integer'image(to_integer(unsigned((A+B)))) & " when A = " &
 					integer'image(to_integer(unsigned((A)))) & " and when B = " &
 					integer'image(to_integer(unsigned((B)))) & "; sum was calculated as " &
-					integer'image(to_integer(unsigned((Sum)))) severity ERROR;
+					integer'image(to_integer(unsigned((Sum)))) severity FAILURE;
 			
 				--increment B
 				B <= B + "0001";
@@ -113,7 +113,7 @@ BEGIN
 					integer'image(to_integer(unsigned((A-B)))) & " when A = " &
 					integer'image(to_integer(unsigned((A)))) & " and when B = " &
 					integer'image(to_integer(unsigned((B)))) & "; difference was calculated as " &
-					integer'image(to_integer(unsigned((Sum)))) severity ERROR;
+					integer'image(to_integer(unsigned((Sum)))) severity FAILURE;
 			
 				--increment B
 				B <= B + "0001";
@@ -122,6 +122,8 @@ BEGIN
 			--increment A
 			A <= A + "0001";
 		end loop;
+		
+		report "Test completed successfully.";
 			
    end process;
 
