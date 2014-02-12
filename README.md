@@ -57,9 +57,12 @@ Here is the final circuit schematic. The design uses four full adder components,
 ![alt text](https://github.com/JasperArneberg/ECE281_Lab2/blob/master/final_schematic.jpg?raw=true "Final Circuit Schematic")
 
 ### Four-Bit Adder Testbench Output
-The four-bit adder/subtractor waveform can be seen below. There are 512 potential combinations, each one corresponding to 1ns.
+The four-bit adder/subtractor waveform can be seen below. There are 512 potential combinations, each one corresponding to 1ns. Below the waveform is the console output. Notice that it states "Test completed successfully."
 
-![alt text](https://github.com/JasperArneberg/ECE281_Lab2/blob/master/four_bit_waveform.png?raw=true "Final Circuit Schematic")
+![alt text](https://github.com/JasperArneberg/ECE281_Lab2/blob/master/four_bit_waveform.png?raw=true "Waveform Output")
+
+![alt text](https://github.com/JasperArneberg/ECE281_Lab2/blob/master/console_output.png?raw=true "Console Output")
+
 
 ### Design Process
 Throughout this lab, it was necessary to constantly break each problem down into smaller pieces. The first task was to make the full adder work. After that, the four-bit adder had to function correctly before moving on. The overflow was pretty easy to implement with a single line of code. The subtractor, on the other hand, took quite a bit of work, because it required multiplexer behavior.
@@ -71,7 +74,7 @@ I demonstrated basic functionality of four-bit adder to Dr. Neebel at 1424 on 10
 I have not demonstrated subtractor and overflow functionality yet.
 
 ## Documentation
-C3C El-Saawy helped me with determining the initial setup of the four-bit adder/subtractor.  
+C3C El-Saawy helped me with determining the initial setup of the four-bit adder/subtractor. He also told me to change the reporting severity to FAILURE in the testbench to stop the test if there's an assertion error. 
 I learned how to use for loops in a testbench and report results:
 http://www.seas.upenn.edu/~ese171/vhdl/VHDLTestbench.pdf  
 I used this site to understand why the overflow is Cout(2) xor Cout(3):
