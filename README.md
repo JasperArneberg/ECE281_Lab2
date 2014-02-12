@@ -1,7 +1,7 @@
 ECE281_Lab2
 ===========
 
-Lab 2: 4-bit Two's Complement Adder/Subtractor
+Lab 2: Four-bit Two's Complement Adder/Subtractor
 
 C3C Jasper Arneberg  
 M6A ECE 281  
